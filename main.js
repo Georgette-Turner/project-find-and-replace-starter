@@ -5,19 +5,6 @@ const findInput = document.querySelector(".find-input")
 const replaceInput = document.querySelector(".replace-input")
 const replaceAllButton = document.querySelector(".replace-all-button")
 
-replaceAllButton.addEventListener('click', function(){
-    console.log("HI")
-
-
-    let findInputValue = findInput.value
-    let replaceInputValue = replaceInput.value
-
-    for (let inputValue = 0; inputValue < item.length; itemIndex += 1) 
-    {const replaceInput= letfindIndex}
-
-    for (letfindIndex = 0; itemIndex < item.length; itemIndex += 1) 
-    {const replaceInput= letfindIndex}
-})
 
 // The following variable holds your OUTER ARRAY of row elements.
 // Later you will need an OUTER LOOP to loop over the individual elements within
@@ -30,12 +17,33 @@ const rowElements = document.querySelectorAll(".row")
 // Call this function from WITHIN your row elements loop. Then you will, in turn,
 // need to loop over the resulting cell elements. But where should this whole
 // NESTED LOOP go? Think through the user's experience: when should WHAT happen? 
-function getCellElements (currentRowElement) {
+function getCellElements(currentRowElement) {
     return currentRowElement.querySelectorAll(".cell")
 }
 
 
-// YOUR CODE GOES HERE
+replaceAllButton.addEventListener('click', function () {
+    
+
+
+    let findInputValue = findInput.value
+    let replaceInputValue = replaceInput.value
+
+    for (let rowIndex = 0; rowIndex < rowElements.length; rowIndex += 1) {
+        let cellElements = getCellElements(rowElements[rowIndex])
+        for (let cellIndex = 0; cellIndex < cellElements.length; cellIndex += 1){
+            while (cellElements[cellIndex].innerHTML.includes(findInputValue)){
+                let newString = cellElements[cellIndex].innerHTML.replace(findInputValue, replaceInputValue)
+                cellElements[cellIndex].innerHTML = newString
+
+            }
+        }
+    }
+
+
+    
+})
+
 
 
 // One last thing: dedicate very careful attention to using variables and
