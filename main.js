@@ -5,10 +5,25 @@ const findInput = document.querySelector(".find-input")
 const replaceInput = document.querySelector(".replace-input")
 const replaceAllButton = document.querySelector(".replace-all-button")
 
+replaceAllButton.addEventListener('click', function(){
+    console.log("HI")
+
+
+    let findInputValue = findInput.value
+    let replaceInputValue = replaceInput.value
+
+    for (let inputValue = 0; inputValue < item.length; itemIndex += 1) 
+    {const replaceInput= letfindIndex}
+
+    for (letfindIndex = 0; itemIndex < item.length; itemIndex += 1) 
+    {const replaceInput= letfindIndex}
+})
+
 // The following variable holds your OUTER ARRAY of row elements.
 // Later you will need an OUTER LOOP to loop over the individual elements within
 // this array.
 const rowElements = document.querySelectorAll(".row")
+
 
 // When you call the function belwo, it will get and return an INNER ARRAY
 // containing the cell elements for a given row.
